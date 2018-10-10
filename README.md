@@ -5,7 +5,7 @@
  Foodable is an app where the user can search recipes that matches the selected ingredients.
 
 
-## MVP (DOM - CANVAS)
+## MVP
 - ingredients filter
 - sign up && login
 - connect to the api 
@@ -39,45 +39,55 @@
 
 ## ROUTES 
 
-- routerLink /
-- routerLink /auth/signup
-- routerLink /auth/login
-- routerLink /auth/logout
-- routerLink /homepage
-- routerLink /recipes-list
-- routerLink /recipe/:id
+- / - Homepage (public)
+- /signup - Signup form (anon)
+- /login - Login form (anon)
+- /logout - Logout (user)
+- /recipes - Search input, random recipes (user)
+- /recipes/search-results?query (user)
+- /recipe/:id - Recipe detail (user)
 
 
 # SERVER
 
 ## Routes
-GET /
-GET /auth/signup
+GET /auth/me
 POST /auth/signup 
-GET /auth/login
 POST /auth/login 
 POST /auth/logout 
 
-GET /homepage
-
-GET /recipes-list
+GET /recipes
+GET /recipes/search-results
 GET /recipe/:id
 
 ## Services
+Auth
+- authService.me
+- authService.signup 
+- authService.login 
+- authService.logout 
+
+
+Recipes
+  - getOne
+  - getAll
+  - getRandom
+  - getSearch
 
 ## Pages
-/signup
-/login
-/homepage
-/recipes-list
-/recipe/:id
+  - signup (anon)
+  - login (anon)
+  - homepage (public)
+  - recipes-list (user)
+  - recipe/:id (user)
 
 ## Components
 
 ## Guards
-- Require-user: if logged in cannot access login or sign up
-- Require-user: if not logged in cannot access to profile
-- Require-anon: as an anon user i can only access to the homepage.
+- Require-init: public
+- Require-user: if not logged in cannot access the page
+- Require-anon: if an anon user i can only access the page
+
 ## Models
 ```
 User model 
@@ -86,8 +96,16 @@ Username: String // required
 Password: String// required
 
 Ingredients model 
+name: String
+picture: String
 
-Username: Str
+Recipes model
+name: String
+picture: string
+cookingTime: number
+ingredients: Array
+Preparation: any
+
 ```
 
 ## Links
