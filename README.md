@@ -29,11 +29,9 @@
 
 - log out - As a user I want to be able to log out from the web app so that I know no one else is using my account.
 
-- homepage - As a user I want to be able to go to the homepage so that i can search recipes and see all the recipes available.
+- homepage - As a user I want to be able to go to the homepage so that i can search recipes that matches the ingredients i selected so that i can see all the recipes available and select one.
 
-- search - As a user I want to search recipes that matches the ingredientes i have.
-
-- recipes list - As a user i want to see all the recipes available so that i can choose one.
+- recipes detail - As a user i want to see the details of a recipe so that i know how to cook it.
 
 # CLIENT
 
@@ -100,7 +98,7 @@ name: String
 picture: String
 
 Recipes model
-name: String
+title: String
 picture: string
 cookingTime: number
 ingredients: Array
