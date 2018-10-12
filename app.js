@@ -9,7 +9,6 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path')
 
-const indexRouter = require('./routes/index');
 const recipesRouter = require('./routes/recipes');
 const authRouter = require('./routes/auth');
 
@@ -52,7 +51,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/recipes', recipesRouter);
 app.use('/auth', authRouter);
 
