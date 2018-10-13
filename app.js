@@ -9,14 +9,13 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path')
 
-const indexRouter = require('./routes/index');
 const recipesRouter = require('./routes/recipes');
 const authRouter = require('./routes/auth');
 
 
 var app = express();
 
-mongoose.connect(process.env.MONGO_DB_URI, {
+mongoose.connect('mongodb://localhost/foodable', {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
@@ -36,7 +35,7 @@ app.use(session({
 }));
 app.use(cors({
   credentials: true,
-  origin: [process.env.CLIENT_URI]
+  origin: ['http://localhost:4200']
 }));
 
 
@@ -52,7 +51,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/recipes', recipesRouter);
 app.use('/auth', authRouter);
 
