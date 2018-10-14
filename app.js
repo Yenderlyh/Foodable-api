@@ -52,6 +52,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/recipes', recipesRouter);
+app.use('/favorites', recipesRouter);
 app.use('/auth', authRouter);
 
 //-- errors
