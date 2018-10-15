@@ -9,7 +9,7 @@ const User = require('../models/user');
 router.get('/me', (req, res, next) => {
   if (req.session.currentUser) {
     res.json(req.session.currentUser);
-  } else {
+  } else { 
     res.status(404).json({ code: 'not-found' });
   }
 });

@@ -11,11 +11,15 @@ const path = require('path')
 
 const recipesRouter = require('./routes/recipes');
 const authRouter = require('./routes/auth');
+const RapidAPI = new require('rapidapi-connect');
+const rapid = new RapidAPI('foodable_5bc4441fe4b09cbc25b0c3ee', '/connect/auth/foodable_5bc4441fe4b09cbc25b0c3ee');
+
+rapid.call('NasaAPI', 'getPictureOfTheDay', {});
 
 
 var app = express();
 
-mongoose.connect(process.env.MONGO_DB_URI, {
+mongoose.connect('mongodb://localhost/foodable', {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
@@ -35,7 +39,7 @@ app.use(session({
 }));
 app.use(cors({
   credentials: true,
-  origin: [process.env.CLIENT_URI]
+  origin: ['http://localhost:4200']
 }));
 
 
@@ -52,6 +56,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/recipes', recipesRouter);
+app.use('/favorites', recipesRouter);
 app.use('/auth', authRouter);
 
 //-- errors
