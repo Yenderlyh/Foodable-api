@@ -20,7 +20,8 @@
     "mongoose": "^5.3.2",
     "mongoose-connect": "0.0.3",
     "morgan": "~1.9.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "rapidapi-connect": "0.0.6"
   },
   "description": "## Description  Foodable is an app where the user can search recipes that matches the selected ingredients.",
   "main": "app.js",
