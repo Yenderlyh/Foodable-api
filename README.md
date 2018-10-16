@@ -41,8 +41,6 @@
 - /signup - Signup form (anon)
 - /login - Login form (anon)
 - /logout - Logout (user)
-- /recipes - Search input, random recipes (user)
-- /recipes/search-results?query (user)
 - /recipe/:id - Recipe detail (user)
 
 
@@ -69,14 +67,13 @@ Auth
 Recipes
   - getOne
   - getAll
-  - getRandom
+  - getRandom TODO
   - getSearch
 
 ## Pages
   - signup (anon)
   - login (anon)
   - homepage (public)
-  - recipes-list (user)
   - recipe/:id (user)
 
 ## Components
@@ -102,7 +99,7 @@ title: String
 picture: string
 cookingTime: number
 ingredients: Array
-Preparation: any
+Preparation: Array
 
 ```
 

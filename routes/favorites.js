@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 
-const Recipes = require('../models/recipes');
+const Recipes = require('../models/recipe');
 
 router.get('/', (req, res, next) => {
   

@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -19,7 +20,7 @@ rapid.call('NasaAPI', 'getPictureOfTheDay', {});
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/foodable', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
@@ -42,18 +43,10 @@ app.use(cors({
   origin: ['http://localhost:4200']
 }));
 
-
-app.use((req, res, next) => {
-  app.locals.currentUser = req.session.currentUser;
-  next();
-});
-
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/recipes', recipesRouter);
 app.use('/favorites', recipesRouter);

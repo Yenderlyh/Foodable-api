@@ -9,21 +9,19 @@ const recipesSchema = new Schema({
     required: true
   },
   cookingTime: {
-    type: Number,
-    // required: true
+    type: Number
   },
   picture: {
     type: String,
     required: true
   },
-  ingredients: {
+  ingredients: [{
+    type: String
+  }],
+  preparation: [{
     type: String,
-    // required: true
-  },
-  preparation: {
-    type: Array,
     required: true
-  }
+  }]
 });
 
 const User = mongoose.model('Recipes', recipesSchema);
