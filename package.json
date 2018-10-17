@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "start-dev": "nodemon ./bin/www",
     "seed-users": "node ./bin/seed-users",
-    "seed-recipes": "node ./bin/seed-recipes"
+    "seed-recipes": "node ./bin/seed-recipes",
+    "seed-ingredients": "node ./bin/seed-ingredients"
   },
   "dependencies": {
     "bcrypt": "^3.0.1",

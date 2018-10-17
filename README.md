@@ -56,6 +56,8 @@ GET /recipes
 GET /recipes/search-results
 GET /recipe/:id
 
+GET /ingredients
+
 ## Services
 Auth
 - authService.me
@@ -69,6 +71,9 @@ Recipes
   - getAll
   - getRandom TODO
   - getSearch
+
+Ingredients
+   - getAll()
 
 ## Pages
   - signup (anon)
@@ -92,7 +97,7 @@ Password: String// required
 
 Ingredients model 
 name: String
-picture: String
+category: String - ENUM ['meat', 'fish']
 
 Recipes model
 title: String

@@ -1,4 +1,5 @@
 'use strict';
+///:id does not validate id is valid AND does not check if dnb returned a recipe (in both cases should respond with 404)
 
 const express = require('express');
 const router = express.Router();
@@ -22,9 +23,11 @@ router.get('/search', (req, res, next) => {
 
   const query = Recipes.find();
   ingredients.forEach(ingredient => {
-    query.find({ ingredients: { "$in": [ingredient] } });
+    query.and({ ingredients: { "$in": [ingredient] } });
   })
   query.then((result) => {
+    if (!result) {
+      return next();}
     console.log(result)
     res.json(result)
   })
@@ -37,19 +40,15 @@ router.get('/:id', (req, res, next) => {
   if (!req.session.currentUser) {
     return res.redirect('/auth/login');
   }
-  // TODO if (!valid id) 404
+  if (!ObjectId.isValid(id)) {
+    return next();
+  }
   Recipes.findById(id)
     .then((result) => {
-      if (!req.session.currentUser) {
-        return res.redirect('/auth/login');
-      }
-      // @todo check other routes for invalids id
-      if (!ObjectId.isValid(id)) {
+      if (!result) {
         return next();
       }
-    
-      // TODO if (!result) 404
-      res.json(result);
+    res.json(result);
     })
     .catch(next);
     
