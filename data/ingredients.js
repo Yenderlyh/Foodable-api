@@ -38,7 +38,11 @@ const ingredients = [{
 },
 {
   name: 'Peppercorns',
-  category: 'spices'
+  category: 'condiments'
+},
+{
+  name: 'tarragon',
+  category: 'condiments'
 },
 {
   name: 'broccoli',
@@ -70,6 +74,10 @@ const ingredients = [{
 },
 {
   name: 'chili pepper',
+  category: 'vegetables'
+},
+{
+  name: 'chilli ',
   category: 'vegetables'
 },
 {
@@ -110,10 +118,6 @@ const ingredients = [{
 },
 {
   name: 'cabbage',
-  category: 'vegetables'
-},
-{
-  name: 'onion',
   category: 'vegetables'
 },
 {
@@ -250,71 +254,71 @@ const ingredients = [{
 },
 {
   name: 'tuna',
-  category: 'fish'
+  category: 'meat'
 },
 {
   name: 'salmon',
-  category: 'fish'
+  category: 'meat'
 },
 {
   name: 'caviar',
-  category: 'fish'
+  category: 'meat'
 },
 {
   name: 'sardines',
-  category: 'fish'
+  category: 'meat'
 },
 {
   name: 'smoked salmon',
-  category: 'fish'
+  category: 'meat'
 },
 {
   name: 'shrimp',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'crab',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'prawns',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'scallop',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'lobster',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'oyster',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'calamari',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'crawfish',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'octopus',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'mussel',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'clam',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'squid',
-  category: 'seafood'
+  category: 'meat'
 },
 {
   name: 'olive oil',
@@ -358,6 +362,22 @@ const ingredients = [{
 },
 {
   name: 'mayonnaise',
+  category: 'condiments'
+},
+{
+  name: 'sugar',
+  category: 'condiments'
+},
+{
+  name: 'beef stock',
+  category: 'condiments'
+},
+{
+  name: 'beef',
+  category: 'meat'
+},
+{
+  name: 'pesto',
   category: 'condiments'
 },
 {
@@ -409,6 +429,10 @@ const ingredients = [{
   category: 'condiments'
 },
 {
+  name: 'marjoram',
+  category: 'condiments'
+},
+{
   name: 'honey mustard',
   category: 'condiments'
 },
@@ -418,6 +442,10 @@ const ingredients = [{
 },
 {
   name: 'peas',
+  category: 'legumes'
+},
+{
+  name: 'kidney beans',
   category: 'legumes'
 },
 {
@@ -438,171 +466,187 @@ const ingredients = [{
 },
 {
   name: 'peanut butter',
-  category: 'nuts'
+  category: 'fuits'
 },
 {
   name: 'almond',
-  category: 'nuts'
+  category: 'fuits'
 },
 {
   name: 'hazelnut',
-  category: 'nuts'
+  category: 'fuits'
 },
 {
   name: 'pistachio',
-  category: 'nuts'
+  category: 'fuits'
 },
 {
   name: 'chestnut',
-  category: 'nuts'
+  category: 'fuits'
 },
 {
   name: 'peanut',
-  category: 'nuts'
+  category: 'fuits'
 },
 {
   name: 'margarine',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'coconut milk',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'almond milk',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'soy milk',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'rice milk',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'milk',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'yogurt',
-  category: 'dairy products'
+  category: 'dairy'
+},
+{
+  name: ' semi-skimmed milk',
+  category: 'dairy'
 },
 {
   name: 'condensed cream',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'cottage cheese',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'cream cheese',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'crème fraîche',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'dulce de Leche',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'evaporated milk',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'feta',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'graviera',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'parmesan',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'blue',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'brie',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'camembert',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'cheddar',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'gouda',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'gruyere',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'mozzarella',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'parmesan',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'pecorino',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'egg',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'butter',
-  category: 'dairy products'
+  category: 'dairy'
 },
 {
   name: 'cinnamon',
-  category: 'spices'
+  category: 'condiments'
 },
 {
   name: 'paprika',
-  category: 'spices'
+  category: 'condiments'
 },
 {
   name: 'garlic powder',
-  category: 'spices'
+  category: 'condiments'
 },
 {
   name: 'chili powder',
-  category: 'spices'
+  category: 'condiments'
 },
 {
   name: 'cumin',
-  category: 'spices'
+  category: 'condiments'
 },
 {
   name: 'cayenne',
-  category: 'spices'
+  category: 'condiments'
 },
 {
   name: 'oregano',
-  category: 'spices'
+  category: 'condiments'
+},
+{
+  name: 'cajun',
+  category: 'condiments'
+},
+{
+  name: 'chicken stock',
+  category: 'condiments'
 },
 {
   name: 'pepper',
   category: 'vegetables'
 },
 {
+  name: 'tomatoe purée',
+  category: 'vegetables'
+},
+{
   name: 'salt',
-  category: 'spices'
+  category: 'condiments'
 },
 {
   name: 'lemon',
@@ -659,6 +703,10 @@ const ingredients = [{
 {
   name: 'cherry',
   category: 'fruits'
+},
+{
+  name: 'cherry tomatoes',
+  category: 'vegetables'
 },
 {
   name: 'kiwi',

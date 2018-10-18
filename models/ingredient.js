@@ -8,7 +8,7 @@ const ingredientSchema = new Schema({
     type: String,
   },
   category: {
-    type:String
+    enum:['vegetables', 'meat','oil','condiments','legumes','dairy','fruits','grains']
   }
 });
 
