@@ -13,11 +13,6 @@ const path = require('path')
 const recipesRouter = require('./routes/recipes');
 const ingredientsRouter = require('./routes/ingredients');
 const authRouter = require('./routes/auth');
-const RapidAPI = new require('rapidapi-connect');
-const rapid = new RapidAPI('foodable_5bc4441fe4b09cbc25b0c3ee', '/connect/auth/foodable_5bc4441fe4b09cbc25b0c3ee');
-
-rapid.call('NasaAPI', 'getPictureOfTheDay', {});
-
 
 var app = express();
 
